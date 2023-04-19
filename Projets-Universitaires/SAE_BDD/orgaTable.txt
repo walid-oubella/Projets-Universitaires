@@ -1,0 +1,5 @@
+Table1 (PASSENGERID entier ClePrimaire, NAME varchar(50), SEX varchar(20), AGE entier)
+Table2 (TICKET varchar(50), CABIN varchar(10), PCLASS entier , EMBARKED char(1),FARE float, PASSENGERID(etrangere))
+Table3 (NAME varchar(30), SURVIVED entier, PASSENGERID(etrangere), SibSp entier, Parch entier)
+\copy clients from clients.txt
+

@@ -1,0 +1,8 @@
+passagers dans chaque classe : select pclass,count(pclass) from reservations group by pclass;
+Combien de femmes et d'hommes y avait-il dans chaque classe? : 
+SELECT sexe,pclass,count(pclass) from reservations as r inner join clients as c on r.idpassager = c.idpassager group by pclass,sexe;
+
+pourcentage survivant mort :
+select Survivant,count(Survivant) as Nb, ( round( ( (select 1.0/count(Survivant) from infosupclients)*count(survivant) ) , 1) * 100 ) as pourcent from infosupclients group by Survivant;
+
+visualisation : select survivant,pclass,count(pclass) from reservations as R inner join infosupclients as info on R.idpassager = info.idpassager group by pclass,info.survivant order by pclass asc;
